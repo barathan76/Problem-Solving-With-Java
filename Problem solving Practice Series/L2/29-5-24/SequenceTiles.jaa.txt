@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class SequenceTiles{
+static int solve(String str){
+byte[] freq = new byte[123];
+int count = 0;
+for(int i =0;i<str.length();i++)
+	freq[(byte)str.charAt(i)]++;
+for(int i =0;i<str.length();i++){
+	if(freq[(byte)str.charAr(i)] == 1)
+		count++;
+}
+return count;
+}
+public static void main(String args[]){
+Scanner scan = new Scanner(System.in);
+String str = scan.nextLine();
+System.out.println(solve(str));
+}
+}

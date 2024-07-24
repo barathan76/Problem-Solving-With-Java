@@ -1,0 +1,49 @@
+Abstract Data Types
+array:
+static vs dynamic array
+problems on 1d array
+problems on 2d array
+
+String operations
+
+Various time and space complexity : eg: constant, linear, logarithmic, quadratic, exponential etc
+
+Stack
+Problems on Stack
+Queue
+Problems on Queue
+Tree
+inorder, preorder, post order in tree;
+BFS and DFS in Tree
+
+Problems on Tree
+
+Graph 
+BFS and DFS in graph
+Problems on Graph
+
+
+Binary Search Tree
+Problems on insertion,updation and deletion in BST
+
+Recursion:
+eg : Find longest subsequence in a given string
+
+BackTracking : 
+N Queens;
+Sudoku solver;
+
+Queue approach for backtracking instead of recursion
+
+Dynamic Programming:
+Memoization
+Tabulation
+Problems : Knapsack, shortest path in 2d array etc.
+
+
+
+
+
+
+
+

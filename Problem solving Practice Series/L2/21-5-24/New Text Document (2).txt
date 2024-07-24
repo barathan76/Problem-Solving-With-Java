@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class SumOfIndex{
+
+static String IntToString(int x){
+return x+"";
+}
+static Boolean check(int x,int a){
+String str = IntToString(x);
+for(char c : str.toCharArray()){
+int b = c -'0';
+System.out.println(y);
+if(a == b)
+return true;
+}
+return false;
+}
+static int solve(int arr[],int n,int a){
+for(int i =0;i<n;i++){
+if(check(arr[i],a)
+
+}
+}
+
+public static void main(String args[]){
+Scanner scan = new Scanner(System.in);
+int a = scan.nextInt();
+int n = scan.nextInt();
+int arr[] = new int[n];
+for(int i =0;i<n;i++){
+arr[i] = scan.nextInt();
+}
+System.out.println(solve(arr,n,a));
+print(arr);
+}
+}

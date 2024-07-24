@@ -1,0 +1,35 @@
+class Signal extends Thread{
+
+enum Colour{Black,Red,Yellow,Green};
+Colour CurrentColor = Colour.Black;
+
+Colour getCurrentColor(){
+return this.CurrentColor;
+}
+public void run(){
+changeToRed();
+System.out.println(currentColor);
+Thread.sleep(10000);
+changeToYellow();
+System.out.println(currentColor);
+Thread.sleep(1000);
+changeToGreen();
+System.out.println(currentColor);
+}
+void changeToGreen(){
+currentColor = Colour.Green;
+}
+void changeToYellow(){
+currentColor = Colour.Yellow;
+}
+void changeToRed(){
+currentColor = Colour.Red;
+}
+}
+
+class TrafficSignal{
+public static void main(String args[]){
+Signal() signal = new Signal();
+signal.start();
+}
+}

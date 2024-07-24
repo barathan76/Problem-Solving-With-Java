@@ -1,0 +1,70 @@
+Time and space Complexity:
+eg : linear,quadratic, polynomial,exponential,constant, linear etc
+
+Data Structures:
+built in : String, Array
+Abstract Data Types : 
+LinkedList
+Stack
+Queue
+Hashing and collision avoiding techniques
+HashMap or map implementation ( don't look into built in dictionay in python)
+Tree
+Binary Search Tree
+AVL Tree and its rotations
+Graph ( directed, undirected)
+Advanced(B tree, B+ tree and its usage on real time)
+
+
+Search in array or string:
+merge sort
+quick sort
+
+
+Search: 
+Binary Search
+
+Tree and Graph Search:
+BFS
+DFS
+
+
+algorithm:
+kadane algorithm
+moore algorithm
+knapsack problem
+dijikshtra algorithm
+Prims and kruskal algorithms for minimum spanning tree
+
+
+dynamic programming:
+Memoization
+Tabulation
+problems based on that eg: knapsack
+(dp logics will vary for each problem heavy mathematics is needed :( )
+
+Recursion:
+learn how all the recursive function call get stored in python(in other language the function calls get stored in internal stack)
+basics : fibonacci series
+intermediate : find longest subsequence in a string
+
+Backtracking:
+find all subset in a string
+n queens
+sudoku solver
+
+Bit Manipulation:
+shift operations
+bitwise operators and its usage ( &,^,|,~, >>, << etc)
+(pure mathematics needed :( )
+
+
+
+Greedy algorithms
+Branch and bound
+divide and conquer
+
+
+
+
+

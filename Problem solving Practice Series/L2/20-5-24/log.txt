@@ -1,0 +1,60 @@
+Microsoft Windows [Version 10.0.19045.4412]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>javac MeanOfArray.java
+MeanOfArray.java:4: error: cannot find symbol
+Arrays.sort(arr);
+^
+  symbol:   variable Arrays
+  location: class MeanOfArray
+1 error
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>javac MeanOfArray.java
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>java MeanOfArray
+Enter the size of the array : 20
+Enter the array elements................
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+01 20
+10.5
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>javac MeanOfArray.java
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>java MeanOfArray
+Enter the size of the array : 20
+Enter the array elements................
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+11 20
+10.5
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>javac MeanOfArray.java
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>java MeanOfArray
+Enter the size of the array : 20
+Enter the array elements................
+6 2 7 5 1 2 0 3 10 2 5 0 5 5 0 8 7 6 8 0
+4.0
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>java MeanOfArray
+Enter the size of the array : 40
+Enter the array elements................
+6 0 7 0 7 5 7 8 3 4 0 7 8 1 6 8 1 1 2 4 8 1 9 5 4 3 8 5 10 8 6 6 1 0 6 10 8 2 3 4
+4.0
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>javac MeanOfArray.java
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>java MeanOfArray
+Enter the size of the array : 40
+Enter the array elements................
+6 0 7 0 7 5 7 8 3 4 0 7 8 1 6 8 1 1 2 4 8 1 9 5 4 3 8 5 10 8 6 6 1 0 6 10 8 2 3 4
+4.7777777
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>javac MeanOfArray.java
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>java MeanOfArray
+Enter the size of the array : 20
+Enter the array elements................
+6 2 7 5 1 2 0 3 10 2 5 0 5 5 0 8 7 6 8 0
+4.0
+
+C:\Users\inc5540-32\Documents\Problem solving Practice Series>

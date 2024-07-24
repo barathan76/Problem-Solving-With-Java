@@ -1,0 +1,10 @@
+import java.util.regex.*;
+class Match
+{
+public static boolean match(String str1,String str2){
+	return Pattern.compile(str2).matcher(str1).matches();
+}
+public static void main(String args[]){
+String str1 = "abcdhgh";
+String str2 = "abc*d?*";
+

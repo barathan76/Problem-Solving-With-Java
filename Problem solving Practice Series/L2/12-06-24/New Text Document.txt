@@ -1,0 +1,11 @@
+import java.util.Scanner;
+class BagItems{
+public static void main(String args[]){
+Scanner scan = new Scanner(System.in);
+int ones = scan.nextInt();
+int zeros = scan.nextInt();
+int neg = scan.nextInt();
+int k = scan.nextInt();
+System.out.println(solve(ones,zeros,neg,k));
+}
+}

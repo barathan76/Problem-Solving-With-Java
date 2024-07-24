@@ -1,0 +1,57 @@
+class Solution {
+    public boolean isSolve(char[][] board,int n,char num,int row,int col){
+        for(int i =0;i<n;i++){ 
+            if(board[row][i] == num)
+                return false;
+            if(board[i][col] == num)
+                return false;
+        }
+        int sqrt = (int)Math.sqrt(n);
+        int rowA = row - row%sqrt;
+        int colA = col - col%sqrt;
+        for(int i = rowA;i<rowA+sqrt;i++){
+            for(int j = colA;j<colA+sqrt;j++){
+                if(board[i][j] == num)
+                    return false;
+            }
+        }
+        return true;
+    }
+    public boolean solve(char[][] board, int n){
+        int row = -1;
+        int col = -1;
+        boolean flag = true;
+
+        for(int i =0;i<n;i++){
+            for(int j =0;j<n;j++){
+                if(board[i][j] == '.'){
+                    row = i;
+                    col = j;
+                    flag = false;
+                    break;
+                }
+            }
+            if(!flag)
+                break;
+        }
+        if(flag)
+            return true;
+        for(int i =1;i<=n;i++){
+            if(isSolve(board,n,(char)(i+48),row,col)){
+                board[row][col] = (char)(i+48); 
+                if(solve(board,n))
+                    return true;
+                else
+                    board[row][col] = '.';       
+                }
+        }
+        return false;
+        
+    }
+    public void solveSudoku(char[][] board) {
+        if(solve(board,board.length))
+            System.out.println("Possible");
+        else
+            System.out.println("Not possible");
+    }
+}

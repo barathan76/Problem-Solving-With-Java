@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+#include <stdlib.h>
+using namespace std;
+#define IOS ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+#define ll long long
+#define int ll
+const int inf = 0x3f3f3f3f;
+const ll INF = 0x3f3f3f3f3f3f3f3f;
+const int N = 2e5 + 5;
+const int M = 5e5 + 5;
+const ll mod = 1e9 + 7;
+
+int n;
+int fa[2005];
+
+int find(int x){
+	return x == fa[x] ? x : fa[x] = find(fa[x]);
+}
+
+void solve()
+{
+	cin >> n;
+	for(int i = 1; i <= n * 2; i++)
+		fa[i] = i;
+	
+	vector<vector<int>>a((n + 1), vector<int>(n + 1));
+	for(int i = 1; i <= n; i++)
+		for(int j = 1; j <= n; j++)
+			cin >> a[i][j];
+
+	for(int i = 1; i <= n; i++){
+		for(int j = i + 1; j <= n; j++){
+			if(a[i][j] == a[j][i])
+				continue;
+			
+			if(find(i) == find(j) || find(i + n) == find(j)) 
+				continue;
+			
+			int u = find(i), v = find(j);
+			int uu = find(i + n), vv = find(j + n);
+			if(a[i][j] < a[j][i]){
+				fa[u] = v;
+				fa[uu] = vv;
+			}
+			else {
+				fa[u] = vv;
+				fa[uu] = v;
+			}
+		}
+	}
+
+	for(int i = 1; i <= n; i++){
+		if(find(i) > n) continue;
+		for(int j = 1; j <= n; j++)
+			swap(a[i][j], a[j][i]);
+	}
+
+	for(int i = 1; i <= n; i++){
+		for(int j = 1; j <= n; j++){
+			cout << a[i][j] << " \n"[j == n];
+		}
+	}
+}
+
+
+signed main()
+{
+	IOS;
+	int t = 1;
+	cin >> t;
+	while (t--)
+	{
+		solve();
+	}
+}

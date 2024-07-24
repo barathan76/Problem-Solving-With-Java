@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class TicTacToeWins{
+static int getMatches(int n){
+
+if(n == 1)
+	return 1;
+
+return n + getMatches(n-1);
+
+}
+static void solve(int i,int n,int val){
+int matches = getMatches(n-1);
+
+System.out.println(matches);
+
+}
+public static void main(String args[]){
+Scanner scan = new Scanner(System.in);
+int n = scan.nextInt();
+solve(0,n,0);
+}
+
+}

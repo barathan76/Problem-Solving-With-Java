@@ -1,0 +1,30 @@
+
+interface TicketReservation{
+void Booking();
+void AvailabilityCheck();
+void Cancellation();
+void PrepareChart();
+}
+
+
+class RailwayReservation implements TicketReservation{
+private Person person;
+private int availableTickets = 10;
+RailwayReservation(){
+}
+void Booking(String name,int age){
+person = new Person(name,age);
+availableTicker--;
+}
+
+void AvailabilityCheck(){
+System.out.println(availableTickets);
+}
+
+void Cancellation(){
+availableTickets++;
+}
+
+void PrepareChart(){
+
+}

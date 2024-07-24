@@ -1,0 +1,11 @@
+import java.util.regex.Pattern;
+class RegularExpressionSample{
+static boolean isAlphaNumeric(String str){
+String regex = "[a-zA-z0-9]";
+return Pattern.compile(regex).matcher(str).matches();
+}
+
+public static void main(String args[]){
+String str = "Hello123";
+System.out.println(isAlphaNumeric(str));
+}

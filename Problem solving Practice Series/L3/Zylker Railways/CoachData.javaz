@@ -1,0 +1,17 @@
+public class CoachData{
+enum Status{AVL,CNF,RAC1,RAC2,RAC3,RAC4,WL1,WL2};
+class Slot{
+String pnr,
+Berth berth;
+Status status;
+Person person;
+}
+List<Slot> slots;
+Coach(){
+slots = new ArrayList<Slot>();
+initSlots();
+}
+public void initSlots(){
+
+}
+}

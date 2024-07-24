@@ -1,0 +1,6 @@
+public class Coach{
+private Person person;
+private Berth berth;
+private int pnr;
+
+}
