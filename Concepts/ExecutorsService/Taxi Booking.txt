@@ -1,0 +1,102 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class TaxiBookingApp {
+    private ExecutorService executorService;
+    private Taxi[] taxis;
+
+    public TaxiBookingApp(int numTaxis) {
+        executorService = Executors.newFixedThreadPool(numTaxis);
+        taxis = new Taxi[numTaxis];
+        for (int i = 0; i < numTaxis; i++) {
+            taxis[i] = new Taxi(i + 1);  // Assuming taxi IDs start from 1
+        }
+    }
+
+    public void bookTaxi(Booking booking) {
+        executorService.submit(() -> {
+            Taxi availableTaxi = findAvailableTaxi();
+            if (availableTaxi != null) {
+                availableTaxi.book(booking);
+            } else {
+                System.out.println("No available taxis at the moment. Please try again later.");
+            }
+        });
+    }
+
+    private synchronized Taxi findAvailableTaxi() {
+        for (Taxi taxi : taxis) {
+            if (taxi.isAvailable()) {
+                return taxi;
+            }
+        }
+        return null;
+    }
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
+
+    public static void main(String[] args) {
+        TaxiBookingApp app = new TaxiBookingApp(5); // Example with 5 taxis
+        app.bookTaxi(new Booking("John", "A", "B"));
+        app.bookTaxi(new Booking("Alice", "C", "D"));
+        // Add more bookings as needed
+
+        app.shutdown();
+    }
+}
+
+class Taxi {
+    private int id;
+    private boolean available;
+
+    public Taxi(int id) {
+        this.id = id;
+        this.available = true;
+    }
+
+    public synchronized boolean isAvailable() {
+        return available;
+    }
+
+    public synchronized void book(Booking booking) {
+        // Simulate booking process
+        System.out.println("Taxi " + id + " booked for " + booking.getCustomerName() + " from " + booking.getPickup() + " to " + booking.getDestination());
+        this.available = false;
+
+        // Simulate trip
+        try {
+            Thread.sleep(5000);  // Simulate the time taken for the trip
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        this.available = true;
+        System.out.println("Taxi " + id + " completed trip.");
+    }
+}
+
+class Booking {
+    private String customerName;
+    private String pickup;
+    private String destination;
+
+    public Booking(String customerName, String pickup, String destination) {
+        this.customerName = customerName;
+        this.pickup = pickup;
+        this.destination = destination;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public String getPickup() {
+        return pickup;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+}
