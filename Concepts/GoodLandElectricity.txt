@@ -1,0 +1,19 @@
+public static int pylons(int k, List<Integer> arr) {
+    int n = arr.size();
+    int i =0;
+    int plants = 0;
+    while(i<n){
+        boolean found =false;
+        for(int j = Math.min(n-1,i+k-1);j > Math.max(-1,i-k); j--){
+            if(arr.get(j) == 1){
+                plants++;
+                i = j+k;
+                found = true;
+                break;
+            }
+        }
+        if(!found)
+                return -1;
+    }
+    return plants;
+    }

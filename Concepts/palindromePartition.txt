@@ -1,0 +1,28 @@
+class Solution {
+    public boolean isPalindrome(String s){
+        for(int i =0,j = s.length()-1;i<j;i++,j--){
+            if(s.charAt(i)!=s.charAt(j))
+                return false;
+        }
+        return true;
+    }
+    public void recursive(List<List<String>> list, List<String> sub,String s){
+        if(s.length() == 0){
+            list.add(new ArrayList<String>(sub));
+            return;
+        }
+        for(int i =1;i<=s.length();i++){
+            String str = s.substring(0,i);
+            if(isPalindrome(str)){
+                sub.add(str);
+                recursive(list,sub,s.substring(i));
+                sub.remove(sub.size()-1);
+            }
+        }
+    }
+    public List<List<String>> partition(String s) {
+        List<List<String>> list = new ArrayList<>();
+        recursive(list,new ArrayList<String>(),s);
+        return list;
+    }
+}

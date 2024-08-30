@@ -1,0 +1,12 @@
+class Graph{
+private int vertices;
+private int[][] adjMatrix;
+Graph(int vertices){
+this.vertices = vertices;
+}
+}
+class GraphMain{
+public static void main(String args[]){
+System.out.println("HelloThere");
+}
+}

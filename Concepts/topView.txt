@@ -1,0 +1,35 @@
+
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+    static class Pair{
+        Node node;
+        int height;
+        Pair(Node node,int height){
+            this.node = node;
+            this.height = height;
+        }
+    }
+	public static void topView(Node root) {
+    
+      Map<Integer,Integer> map = new TreeMap<>();
+      Queue<Pair> queue = new LinkedList<Pair>();
+      queue.add(new Pair(root,0));
+      while(queue.size()!=0){
+          Pair pair = queue.poll();
+          
+          if(map.get(pair.height)==null)
+                map.put(pair.height,pair.node.data);
+          if(pair.node.left!=null){
+              queue.add(new Pair(pair.node.left,pair.height-1));
+          }
+          if(pair.node.right!=null){
+              queue.add(new Pair(pair.node.right,pair.height+1));
+          }
+      }
+      for(Map.Entry<Integer,Integer> entry: map.entrySet())
+            System.out.print(entry.getValue()+" ");
+      
+    }
