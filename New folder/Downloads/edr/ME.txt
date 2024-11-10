@@ -1,2 +1,0 @@
-This is a decoy file by ManageEngine’s Anti-Ransomware  to detect ransomware intrusion attempts
-Note : Do not delete any file or this folder.
